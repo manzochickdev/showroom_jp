@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import Dropdown from './components/Dropdown';
+import FoodApp from './project2/FoodApp';
 
 function App() {
   const [shouldShowMenu,setShouldShowMenu] = useState(false)
@@ -31,11 +32,12 @@ function App() {
 
   return (
     <>
-      <NavBar onTapMenu={toggleMenu}/>
+      {/* <NavBar onTapMenu={toggleMenu}/>
       <Dropdown shouldShowMenu={shouldShowMenu} onTapMenu={toggleMenu} />
       <Hero />
       <Content />
-      <Footer />
+      <Footer /> */}
+      <FoodApp/>
     </>
   );
 }

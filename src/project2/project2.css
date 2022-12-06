@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-link{
+    @apply m-12 md:m-0 text-white md:text-black hover:text-red-500 transition duration-500 ease-in
+}
