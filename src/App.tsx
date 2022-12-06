@@ -1,25 +1,42 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import Hero from './components/Hero';
+import Content from './components/Content';
+import Footer from './components/Footer';
+import Dropdown from './components/Dropdown';
 
 function App() {
+  const [shouldShowMenu,setShouldShowMenu] = useState(false)
+
+  const toggleMenu =  () => {
+    setShouldShowMenu(!shouldShowMenu)
+  }
+  useEffect(()=>{
+    const hideMenu = () => {
+      if(window.innerWidth > 768 && shouldShowMenu){
+        setShouldShowMenu(false)
+      }
+    }
+
+    window.addEventListener('resize',hideMenu)
+
+    return () => {
+      window.removeEventListener('resize',hideMenu)
+    }
+  })
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar onTapMenu={toggleMenu}/>
+      <Dropdown shouldShowMenu={shouldShowMenu} onTapMenu={toggleMenu} />
+      <Hero />
+      <Content />
+      <Footer />
+    </>
   );
 }
 
