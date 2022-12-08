@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import FoodApp from './project2/FoodApp';
 import HelloWorld from './HelloWorld/HelloWorld';
+import PorfolioApp from './portfolio/App';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/food",
     element: <FoodApp/>,
+  },
+  {
+    path: "/portfolio",
+    element: <PorfolioApp/>,
   }
 ]);
 
@@ -32,7 +37,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    {/* <RouterProvider router={router}/> */}
+    <PorfolioApp/>
   </React.StrictMode>
 );
 
