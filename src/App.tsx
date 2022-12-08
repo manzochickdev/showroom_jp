@@ -1,6 +1,7 @@
 import './App.css';
 import FoodAppImg from './project2/img/banner.png'
 import HelloAppImg from './HelloWorld/images/img_1.jpg'
+import PorfolioAppImg from './portfolio/assets/projects/realestate.jpg'
 import { Link } from 'react-router-dom'
 
 function App() {
@@ -14,6 +15,11 @@ function App() {
       <div style={{ backgroundImage: `url(${FoodAppImg})` }} className="relative w-full h-1/3 bg-no-repeat bg-cover3">
         <Link to="/food">
           <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl mb-5 font-bold md:text-5xl'>Food App</p>
+        </Link>
+      </div>
+      <div style={{ backgroundImage: `url(${PorfolioAppImg})` }} className="relative w-full h-1/3 bg-no-repeat bg-cover3">
+        <Link to="/portfolio">
+          <p className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl mb-5 font-bold md:text-5xl'>My Portfolio</p>
         </Link>
       </div>
 
